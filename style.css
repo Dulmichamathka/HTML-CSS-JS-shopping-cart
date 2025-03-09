@@ -87,9 +87,15 @@ header {
   font-size: 1rem;
   font-weight: 500;
   margin: 1rem 0;
-  color: #000;
-  background: linear-gradient(to right, var(--light-green), var(--light-green));
+  color: #ffffff;
+  background: linear-gradient(to right, #c4ed86, #001a00);
   cursor: pointer;
+  margin-top: 25px;
+  transition: all 0.8s;
+}
+.btn:hover {
+  box-shadow: 0px 0px 5px #c4ed86, 0px 0px 25px #c4ed86, 0px 0px 50px #c4ed86,
+    0px 0px 100px #c4ed86, 0px 0px 200px #001a00;
 }
 
 .animate-image {
@@ -147,4 +153,7 @@ header {
   border-radius: 20px;
 }
 
-.product-card;
+/* cart button */
+
+.cart-button {
+}
