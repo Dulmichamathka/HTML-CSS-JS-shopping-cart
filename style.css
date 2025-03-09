@@ -52,13 +52,15 @@ header {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50px 10%;
+  padding: 0px 10%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 .content-cover {
   display: flex;
-  max-width: 600px;
+  max-width: 650px;
   flex-direction: column;
   align-items: start;
   justify-content: center;
@@ -66,4 +68,49 @@ header {
   backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.4);
   border-radius: 25px;
+}
+
+.content-cover h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: #000;
+  background: linear-gradient(to right, var(--light-green), var(--light-green));
+  cursor: pointer;
+}
+
+.animate-image {
+  position: absolute;
+  top: 0;
+  right: 250px;
+  animation-name: moveimage;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.animate-image img {
+  width: 350px;
+}
+
+/* animation of the image */
+
+@keyframes moveimage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
