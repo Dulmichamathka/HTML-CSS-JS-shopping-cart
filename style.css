@@ -224,4 +224,11 @@ header {
   background: var(--light-green);
   text-align: center;
   border-radius: 40px;
+  cursor: pointer;
+}
+
+.more-details:hover {
+  box-shadow: 0px 0px 5px #c3dd9d, 0px 0px 25px #c4ed86;
+  transition: 0.3s ease;
+  transform: scale(0.9);
 }
