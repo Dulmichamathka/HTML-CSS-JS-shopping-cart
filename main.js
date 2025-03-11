@@ -32,10 +32,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //cart open close toggle
 
-let cartIcon = document.querySelector(".cart-button");
+let cartIcon = document.getElementById("cart-button");
 let cartModel = document.querySelector(".cart-model");
 let cartClose = document.querySelector(".close-btn");
 
 cartIcon.addEventListener("click", () => {
   cartModel.classList.add("open-cart");
 });
+
+cartClose.onclick = () => {
+  cartModel.classList.remove("open-cart");
+};
+
+//retrive cart items from the local storage
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems") || []);
+let total = 0;
+let itemCount = 0;
+
+// add item to the cartitems array
+
+function addToCart(productCard) {
+  const name = productCard.querySelector(".product-name").textContent;
+  const image = productCard.querySelector(".product-image").src;
+  const priceText = productCard.querySelector(".product-price").textContent;
+  const price = parseFloat(priceText.replace("$", ""));
+
+  const existingItem = cartItems.find((item) => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cartItems.push({ name, image, price, quantity: 1 });
+  }
+
+  updateLocalStorage();
+  UpdateCartDispaly();
+  animateAddToCart();
+}
+
+function updateLocalStorage() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+window.onload = function () {};
