@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shopping cart </title>
     <link rel="stylesheet" href="../style.css" />
 
     <link
@@ -15,7 +15,7 @@
     <header>
       <section class="nav">
         <div class="logo">Indoorplants<i class="bx bxs-leaf"></i></div>
-        <div class="cart-button" id="cart-button">
+        <div class="cart-button" id="cart-button" onclick="">
           <i class="bx bxs-cart-alt"></i>
           <p>cart</p>
           <div class="cart-count">0</div>
@@ -36,7 +36,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-01">Details</p>
       </div>
 
       <!-- product cart -->
@@ -50,7 +50,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-02">Details</p>
       </div>
 
       <!-- product cart -->
@@ -64,7 +64,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-03">Details</p>
       </div>
 
       <!-- product cart -->
@@ -78,7 +78,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-04">Details</p>
       </div>
 
       <!-- product cart -->
@@ -92,7 +92,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-05">Details</p>
       </div>
 
       <!-- product cart -->
@@ -106,7 +106,7 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-06">Details</p>
       </div>
 
       <!-- product cart -->
@@ -120,7 +120,8 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p class="more-details">Details</p>
+        <p class="more-details" data-id="id-07">Details</p>
+        </p>
       </div>
 
       <!-- product cart -->
@@ -134,15 +135,317 @@
           </div>
           <div class="add-to-cart"><i class="bx bx-plus"></i></div>
         </div>
-        <p
-          class="more-details"
-          onclick="document.getElementById('id-08').style.display='block'"
-        >
-          Details
-        </p>
+        <p class="more-details" data-id="id-08">Details</p>
       </div>
     </div>
-    <!-- model -->
+
+
+
+<!-- ---------------------------------------------------------------------------------------- -->
+ <!-- data id can be uniqely identify the modal by its id -->
+
+ <!-- model product-01 -->
+ <div id="id-01" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+     
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-01.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- model product-02 -->
+ <div id="id-02" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+     
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-02.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- model product-03 -->
+ <div id="id-03" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+     
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-03.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- model product-04 -->
+ <div id="id-04" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-04.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- model product-05 -->
+ <div id="id-05" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-05.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+ <!-- model product-06 -->
+ <div id="id-06" class="modal">
+  <!-- model content -->
+  <div class="model-content animate">
+    <span
+     
+      class="close"
+      title="Close Modal"
+      >&times;</span
+    >
+    <div class="left-image">
+      <img src="/images/product-06.jpg" alt="" />
+    </div>
+    <div class="right-image">
+      <h3>PRAYER PLANT</h3>
+      <span class="sub-name">Calathea spp</span>
+      <p class="size">
+        Size : <span class="details">Up to 3 feet tall</span>
+      </p>
+      <p class="water">
+        Water :
+        <span class="details"
+          >Keep evenly moist. Don't allow to become overly soggy or dry out
+          completely. May be sensitive to tap water, so use distilled or
+          filtered water.</span
+        >
+      </p>
+      <p class="fertilize">
+        Fertilize:
+        <span class="details">Once a month from spring through fall.</span>
+      </p>
+      <p class="product-details">
+        Also called rattlesnake plant, peacock plant, or zebra plant, this
+        popular houseplant is grown for its decorative foliage in an
+        assortment of patterns, colors, and shapes. Prayer plants don't like
+        their roots disturbed, so repot in early spring only if rootbound.
+        Learn more about how to grow calathea plants.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- model product-07 -->
+    <div id="id-07" class="modal">
+      <!-- model content -->
+      <div class="model-content animate">
+        <span
+      
+          class="close"
+          title="Close Modal"
+          >&times;</span
+        >
+        <div class="left-image">
+          <img src="/images/product-07.jpg" alt="" />
+        </div>
+        <div class="right-image">
+          <h3>PRAYER PLANT</h3>
+          <span class="sub-name">Calathea spp</span>
+          <p class="size">
+            Size : <span class="details">Up to 3 feet tall</span>
+          </p>
+          <p class="water">
+            Water :
+            <span class="details"
+              >Keep evenly moist. Don't allow to become overly soggy or dry out
+              completely. May be sensitive to tap water, so use distilled or
+              filtered water.</span
+            >
+          </p>
+          <p class="fertilize">
+            Fertilize:
+            <span class="details">Once a month from spring through fall.</span>
+          </p>
+          <p class="product-details">
+            Also called rattlesnake plant, peacock plant, or zebra plant, this
+            popular houseplant is grown for its decorative foliage in an
+            assortment of patterns, colors, and shapes. Prayer plants don't like
+            their roots disturbed, so repot in early spring only if rootbound.
+            Learn more about how to grow calathea plants.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- model product 08 -->
     <div id="id-08" class="modal">
       <!-- model content -->
       <div class="model-content animate">
@@ -185,5 +488,26 @@
         </div>
       </div>
     </div>
+
+    <!-- cart model -->
+     <div class="cart-model" id="card-model">
+      <div class="cart-head">
+        <h2 class="cart-name">Your Cart</h2>
+        <button class="close-btn" id="close-btn">&times;</button>
+      </div>
+
+      <ul class="cart-items">
+        <!-- cart items are here -->
+      </ul>
+
+      <div class="cart-total">
+        Total : $ <span class="total-price">0</span>
+      </div>
+      <div class="checkout">
+        Checkout
+      </div>
+     </div>
+
+    <script src="../main.js"></script>
   </body>
 </html>
