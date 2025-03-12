@@ -58,6 +58,7 @@ function addToCart(productCard) {
 
   updateLocalStore();
   updateCartDisplay();
+  animateAddToCart(productCard);
 }
 
 //update local storage
@@ -70,25 +71,21 @@ function updateLocalStore() {
 
 function removeItem(name) {
   cartItems = cartItems.filter((item) => item.name !== name);
-
   updateLocalStore();
   updateCartDisplay();
 }
 
 //onload cart amount display
 
-//Animation when adding item to the cart
+window.onload = function () {
+  updateCartDisplay();
+};
 
 //update the calss display
 function updateCartDisplay() {
   const cartList = document.getElementById("cart-items");
   const totalElement = document.getElementById("total-price");
   const countElement = document.getElementById("cart-count");
-
-  if (!cartList || !totalElement || !countElement) {
-    console.error("Cart display elements not found in the document.");
-    return;
-  }
 
   cartList.innerHTML = "";
 
@@ -108,7 +105,7 @@ function updateCartDisplay() {
       <button onclick="changeQuantity('${item.name}',-1)">-</button>
       <button onclick="changeQuantity('${item.name}',1)">+</button>
      </div>
-     <button class="remove-item" onclick="removeItem('${item.name}')">x</button>
+     <button class="remove-item" onclick="removeItem('${item.name}')">&times;</button>
     `;
 
     cartList.appendChild(li);
@@ -131,10 +128,44 @@ function changeQuantity(name, delta) {
   }
 }
 
-window.onload = function () {
-  updateCartDisplay();
-};
+//Animation when adding item to the cart
 
+function animateAddToCart(element) {
+  const cartIcon = document.getElementById("cart-button");
+  const cartRect = cartIcon.getBoundingClientRect();
+  const rect = element.getBoundingClientRect();
+
+  const flyingItem = document.createElement("div");
+  flyingItem.className = "flying-item";
+
+  flyingItem.style.cssText = `
+    position: fixed;
+  z-index: 3000;
+  width: 150px;
+  height: 150px;
+  background-image: url(${element.querySelector(".product-image").src});
+  background-size: cover;
+  border-radius: 50%;
+  left:${rect.left}px ;
+  top:${rect.top}px ;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  `;
+
+  document.body.appendChild(flyingItem);
+
+  // Trigger animation
+  setTimeout(() => {
+    flyingItem.style.transform = "scale(0.5)";
+    flyingItem.style.left = `${cartRect.left + cartRect.width / 2 - 25}px`;
+    flyingItem.style.top = `${cartRect.top + cartRect.height / 2 - 100}px`;
+    flyingItem.style.opacity = "0";
+  }, 50);
+
+  setTimeout(() => {
+    flyingItem.remove();
+  }, 1200);
+}
 //cart open close toggle
 
 let cartIcon = document.getElementById("cart-button");
