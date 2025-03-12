@@ -30,6 +30,111 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//retrive cart items from the local storage
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+let total = 0;
+let itemCount = 0;
+
+// add item to the cartitems array
+
+function addToCart(productCard) {
+  const name = productCard.querySelector(".product-name").textContent;
+  const image = productCard.querySelector(".product-image").src;
+  const priceText = productCard.querySelector(".product-price").textContent;
+  const price = parseFloat(priceText.replace("Rs.", ""));
+
+  const existingItem = cartItems.find((item) => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cartItems.push({
+      name,
+      image,
+      price,
+      quantity: 1,
+    });
+  }
+
+  updateLocalStore();
+  updateCartDisplay();
+}
+
+//update local storage
+
+function updateLocalStore() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+//remove item from the cart
+
+function removeItem(name) {
+  cartItems = cartItems.filter((item) => item.name !== name);
+
+  updateLocalStore();
+  updateCartDisplay();
+}
+
+//onload cart amount display
+
+//Animation when adding item to the cart
+
+//update the calss display
+function updateCartDisplay() {
+  const cartList = document.getElementById("cart-items");
+  const totalElement = document.getElementById("total-price");
+  const countElement = document.getElementById("cart-count");
+
+  if (!cartList || !totalElement || !countElement) {
+    console.error("Cart display elements not found in the document.");
+    return;
+  }
+
+  cartList.innerHTML = "";
+
+  total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+
+  cartItems.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("cart-item");
+    li.innerHTML = `
+      <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+     <div class="cart-item-details">
+      <div class="cart-item-name">${item.name}</div>
+      <div class="cart-item-price">Rs. ${item.price} &times; ${item.quantity}</div>
+     </div>
+     <div class="quantity-controls">
+      <button onclick="changeQuantity('${item.name}',-1)">-</button>
+      <button onclick="changeQuantity('${item.name}',1)">+</button>
+     </div>
+     <button class="remove-item" onclick="removeItem('${item.name}')">x</button>
+    `;
+
+    cartList.appendChild(li);
+  });
+
+  totalElement.textContent = total.toFixed(2);
+  countElement.textContent = itemCount;
+}
+
+function changeQuantity(name, delta) {
+  const item = cartItems.find((item) => item.name === name);
+  if (item) {
+    item.quantity += delta;
+    if (item.quantity <= 0) {
+      removeItem(name);
+    } else {
+      updateLocalStore();
+      updateCartDisplay();
+    }
+  }
+}
+
+window.onload = function () {
+  updateCartDisplay();
+};
+
 //cart open close toggle
 
 let cartIcon = document.getElementById("cart-button");
@@ -43,35 +148,3 @@ cartIcon.addEventListener("click", () => {
 cartClose.onclick = () => {
   cartModel.classList.remove("open-cart");
 };
-
-//retrive cart items from the local storage
-
-let cartItems = JSON.parse(localStorage.getItem("cartItems") || []);
-let total = 0;
-let itemCount = 0;
-
-// add item to the cartitems array
-
-function addToCart(productCard) {
-  const name = productCard.querySelector(".product-name").textContent;
-  const image = productCard.querySelector(".product-image").src;
-  const priceText = productCard.querySelector(".product-price").textContent;
-  const price = parseFloat(priceText.replace("$", ""));
-
-  const existingItem = cartItems.find((item) => item.name === name);
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    cartItems.push({ name, image, price, quantity: 1 });
-  }
-
-  updateLocalStorage();
-  UpdateCartDispaly();
-  animateAddToCart();
-}
-
-function updateLocalStorage() {
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
-}
-
-window.onload = function () {};

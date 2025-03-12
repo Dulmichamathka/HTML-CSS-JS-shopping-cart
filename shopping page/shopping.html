@@ -18,7 +18,7 @@
         <div class="cart-button" id="cart-button" onclick="">
           <i class="bx bxs-cart-alt"></i>
           <p>cart</p>
-          <div class="cart-count">0</div>
+          <div id="cart-count">0</div>
         </div>
       </section>
     </header>
@@ -34,7 +34,7 @@
             <p class="scientific-name">Epipremnum aureum</p>
             <h4 class="product-price">Rs.600</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-01">Details</p>
       </div>
@@ -44,11 +44,11 @@
         <img src="/images/product-06.jpg" class="product-image" alt="" />
         <div class="card-content">
           <div class="title">
-            <h4 class="product-name">PRAYER PLANT</h4>
+            <h4 class="product-name">PARLOR PALM</h4>
             <p class="scientific-name">Chamaedorea elegans</p>
             <h4 class="product-price">Rs.1700</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-02">Details</p>
       </div>
@@ -62,7 +62,7 @@
             <p class="scientific-name">Spathiphyllum spp</p>
             <h4 class="product-price">Rs.2000</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-03">Details</p>
       </div>
@@ -76,7 +76,7 @@
             <p class="scientific-name">Asplenium nidus</p>
             <h4 class="product-price">Rs.600</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-04">Details</p>
       </div>
@@ -90,7 +90,7 @@
             <p class="scientific-name">Zamioculcas zamiifolia</p>
             <h4 class="product-price">Rs.800</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-05">Details</p>
       </div>
@@ -104,7 +104,7 @@
             <p class="scientific-name">Philodendron spp</p>
             <h4 class="product-price">Rs.600</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-06">Details</p>
       </div>
@@ -118,7 +118,7 @@
             <p class="scientific-name">Calathea spp</p>
             <h4 class="product-price">Rs.1400</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-07">Details</p>
         </p>
@@ -133,7 +133,7 @@
             <p class="scientific-name">Aglaonema spp</p>
             <h4 class="product-price">Rs.1600</h4>
           </div>
-          <div class="add-to-cart"><i class="bx bx-plus"></i></div>
+          <div class="add-to-cart" onclick="addToCart(this.parentElement.parentElement)"><i class="bx bx-plus"></i></div>
         </div>
         <p class="more-details" data-id="id-08">Details</p>
       </div>
@@ -198,7 +198,7 @@
       >&times;</span
     >
     <div class="left-image">
-      <img src="/images/product-02.jpg" alt="" />
+      <img src="/images/product-06.jpg" alt="" />
     </div>
     <div class="right-image">
       <h3>PRAYER PLANT</h3>
@@ -241,7 +241,7 @@
       >&times;</span
     >
     <div class="left-image">
-      <img src="/images/product-03.jpg" alt="" />
+      <img src="/images/product-07.jpg" alt="" />
     </div>
     <div class="right-image">
       <h3>PRAYER PLANT</h3>
@@ -370,7 +370,7 @@
       >&times;</span
     >
     <div class="left-image">
-      <img src="/images/product-06.jpg" alt="" />
+      <img src="/images/product-02.jpg" alt="" />
     </div>
     <div class="right-image">
       <h3>PRAYER PLANT</h3>
@@ -414,7 +414,7 @@
           >&times;</span
         >
         <div class="left-image">
-          <img src="/images/product-07.jpg" alt="" />
+          <img src="/images/product-03.jpg" alt="" />
         </div>
         <div class="right-image">
           <h3>PRAYER PLANT</h3>
@@ -496,17 +496,20 @@
         <button class="close-btn" id="close-btn">&times;</button>
       </div>
 
-      <ul class="cart-items">
+      <ul id="cart-items">
         <!-- cart items are here -->
       </ul>
 
       <div class="cart-total">
-        Total : $ <span class="total-price">0</span>
+        Total : $ <span id="total-price">0</span>
       </div>
       <div class="checkout">
         Checkout
       </div>
      </div>
+
+
+   
 
     <script src="../main.js"></script>
   </body>
